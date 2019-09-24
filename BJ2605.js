@@ -1,3 +1,39 @@
+const readline=require("readline");
+const rl=readline.createInterface({
+	input:process.stdin,
+	output:process.stdout
+});
+let input = new Array;
+var studentOrder = new Array;
+var totalOrder = new Array;
+
+rl.on('line', function (line) {
+	input = line.split(' ').map((el) => el);
+	var studentNum = input.length
+	var ticketNum  = input
+	
+	for(var ticket=0; ticket<studentNum; ticket++){
+		studentOrder[ticket] = ticket+1
+		
+		if(ticketNum[ticket]>0){
+			totalOrder.splice(ticket-ticketNum[ticket], 0, studentOrder[ticket])
+		}else{
+			totalOrder.splice(ticket, 0, studentOrder[ticket])
+		}
+	}
+	if(studentNum === 1){
+		totalOrder[0,1] = 1
+		totalOrder.pop()
+	}else{
+		totalOrder.pop()
+	}
+})
+
+.on('close', function () {
+	console.log(totalOrder);
+    process.exit();
+});
+
 /* var fs = require('fs');
 var input = fs.readFileSync('/dev/stdin').toString().split(' '); */
 
@@ -6,7 +42,8 @@ var input = fs.readFileSync('/dev/stdin').toString().split(' '); */
 // 숫자가 하나씩 증가하는 랜덤 값을 어떻게 구하지? random으로 구함 o
 // 구한 랜덤값 만큼 배열이 이동해야함 0
 // 입력이 안돼..
-var input = process.argv
+
+/* var input = process.argv
 var studentNum = parseInt(input[2])
 
 var studentOrder = new Array; // 줄선 학생
@@ -26,4 +63,5 @@ for(var ticket=0; ticket<studentNum; ticket++){
 		totalOrder.splice(ticket, 0, studentOrder[ticket])
 	}
 }
-console.log(totalOrder)
+console.log(totalOrder) */
+
