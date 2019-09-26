@@ -1,4 +1,4 @@
-const readline=require("readline");
+/* const readline=require("readline");
 const rl=readline.createInterface({
 	input:process.stdin,
 	output:process.stdout
@@ -32,7 +32,7 @@ rl.on('line', function (line) {
 .on('close', function () {
 	console.log(totalOrder);
     process.exit();
-});
+}); */
 
 /* var fs = require('fs');
 var input = fs.readFileSync('/dev/stdin').toString().split(' '); */
@@ -65,3 +65,21 @@ for(var ticket=0; ticket<studentNum; ticket++){
 }
 console.log(totalOrder) */
 
+fs = require('fs'); 
+var input = fs.readFileSync('/study/baekjoon/test.txt').toString().split("\n");
+
+var studentNum = Number(input[0])
+var ticketNum = input[1].split(' ').map(x=> parseInt(x));
+var studentOrder = new Array; // 줄선 학생
+var totalOrder = new Array; // 최종 순서
+
+for(var ticket=0; ticket<studentNum; ticket++){
+	studentOrder[ticket] = ticket+1
+
+	if(ticketNum[ticket]>0){
+		totalOrder.splice(ticket-ticketNum[ticket], 0, studentOrder[ticket])
+	}else{
+		totalOrder.splice(ticket, 0, studentOrder[ticket])
+	}
+}
+console.log(totalOrder.join(' '))
