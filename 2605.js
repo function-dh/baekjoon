@@ -1,5 +1,5 @@
 fs = require('fs'); 
-var input = fs.readFileSync('/study/baekjoon/test.txt').toString().split("\n");
+var input = fs.readFileSync('/Users/kimdonghyun/git/baekjoon/test.txt').toString().split("\n");
 
 var studentNum = Number(input[0])
 var ticketNum = input[1].split(' ').map(x=> parseInt(x));
