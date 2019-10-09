@@ -26,3 +26,12 @@ if(txt.length <=100){
 	}
 	console.log(result)
 }
+
+// 모범 답안
+// const data = require("fs").readFileSync("/dev/stdin", "utf8").toString().trim()
+// let str = ""
+// for(let i = 97; i < 123; i++){
+//   let char = String.fromCharCode(i)
+//   str += data.indexOf(char) + " ";
+// }
+// console.log(str)
