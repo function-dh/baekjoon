@@ -1,7 +1,7 @@
 fs = require('fs'); 
 var input = fs.readFileSync('/Users/kimdonghyun/git/baekjoon/test.txt').toString().split("\n");
+var num = input // 보기 쉽게
 
-var num = input
 for(var i=0; i<num.length; i++){
 	var numArray = num[i].split(' ')
 	var a = parseInt(numArray[0])
